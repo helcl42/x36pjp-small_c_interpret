@@ -1,0 +1,81 @@
+
+1)	Program		-> 	'void' 'main' '(' ')' { BlokPrikazu }
+
+2)	Prikaz 		->  PodminkaIf
+3)	Prikaz		->	CyklusFor
+4)	Prikaz		->	CyklusWhile
+5)	Prikaz		->	Vyraz;
+6)	Prikaz		->	Output;
+7)	Prikaz		->	Deklarace ;
+8)	Prikaz		->	'{' BlokPrikazu '}'
+9)	Prikaz		->	;         
+         
+10)	PodminkaIf	->	'if''(' Podminka ')' Prikaz PodminkaIf1
+11)	PodminkaIf1 -> 	'else' Prikaz
+12)	PodminkaIf1	-> 	e
+
+13)	CyklusWhile	->	while '(' Podminka ')' Prikaz
+       
+14)	CyklusFor 	-> 	'for''(' Vyraz ';' Podminka ';' Vyraz ')' Prikaz
+    
+15)	Output 		-> 	'printf''(' Vyraz ')'
+           
+16)	BlokPrikazu ->  Prikaz ';' BlokPrikazu
+17)	BlokPrikazu	->	e
+
+18)	OpPorovnani ->  	'=='
+19)	OpPorovnani	->	'!='
+20)	OpPorovnani	->	'<='
+21)	OpPorovnani	->	'>='
+22)	OpPorovnani	->	'<'
+23)	OpPorovnani	->	'>'
+
+24)	Podminka 	-> 	Vyraz OpPorovnani Vyraz
+
+25)	Typ 		-> 	'float'
+26)	Typ			->	'int'
+27)	Typ			->	'void'
+
+28)	Deklarace	->	Type 'ident' ';'
+
+30)	OpPrirazeni -> 	'='
+31)	OpPrirazeni	->	'+='
+32)	OpPrirazeni	->	'-='
+33)	OpPrirazeni	->	'*='
+34)	OpPrirazeni	->	'/='
+35)	OpPrirazeni	->	'%='       
+       
+36)	Vyraz 		-> 	'ident' Vyraz1
+37)	Vyraz		->	++ ident ZbytekTermu ZbytekVyrazu
+38)	Vyraz		->	-- indet ZbytekTermu ZbytekVyrazu
+39)	Vyraz		->	cislo ZbytekTermu ZbytekVyrazu
+40)	Vyraz		->	( Vyraz ) ZbytekTermu ZbytekVyrazu
+41)	Vyraz 		-> 	'-' Term ZbytekVyraz
+
+42)	Vyraz1		->	OpPrirazeni Vyraz
+43)	Vyraz1		->	IncDec ZbytekTermu ZbytekVyrazu			
+
+44)	ZbytekVyrazu 	-> 	'+' Term ZbytekVyrazu
+45)	ZbytekVyrazu	-> 	'-' Term ZbytekVyrazu
+46)	ZbytekVyrazu	->	e      
+
+47)	Term 			-> 	Faktor ZbytekTermu
+
+48)	ZbytekTermu 	-> 	'/' Faktor ZbytekTermu
+49)	ZbytekTermu		->	'*' Faktor ZbytekTermu
+50)	ZbytekTermu		->	'%' Faktor ZbytekTermu
+51)	ZbytekTermu		->	e
+  
+52)	Faktor 		-> 	'ident' IncDec
+53)	Faktor		->	'++' 'ident'
+54)	Faktor		->	'--' 'ident'
+55)	Faktor		->	'cislo'
+56)	Faktor		->	'(' Vyraz ')'      
+      
+57)	IncDec		-> 	'++'
+58)	IncDec		->  	'--'
+59)	IncDec		->	e
+
+
+
+	
